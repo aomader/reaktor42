@@ -1,0 +1,238 @@
+/* key variables */
+width = 800px
+
+/* mixins */
+border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n
+    border-radius n
+transition(arg)
+    -webkit-transition arg
+    -moz-transition arg
+    -o-transition arg
+    -ms-transition arg
+    transition arg
+
+/* fonts */
+@font-face
+    font-family 'Droid Sans'
+    src url(fonts/droidsans.ttf)
+@font-face
+    font-family 'Droid Sans'
+    font-weight bold
+    src url(fonts/droidsans_bold.ttf)
+@font-face
+    font-family 'Droid Serif'
+    src url(fonts/droidserif.ttf)
+@font-face
+    font-family 'Droid Serif'
+    font-weight bold
+    src url(fonts/droidserif_bold.ttf)
+@font-face
+    font-family 'Droid Serif'
+    font-style italic
+    src url(fonts/droidserif_italic.ttf)
+@font-face
+    font-family 'Droid Serif'
+    font-weight bold
+    font-style italic
+    src url(fonts/droidserif_bolditalic.ttf)
+
+/* general layout */
+html
+    width 100%
+    height 100%
+    background #fff url(../images/bg.png) repeat-x
+    color #363636
+body
+    width width
+    margin 0 auto
+    font 14px/1.5  'Droid Serif','Brawler', helvetica, arial, sans-serif
+    letter-spacing 0.1
+h1
+    float left
+    width 139px
+    height 63px
+    margin-top 40px
+    text-indent -9999px
+    background url(../images/logo.png) no-repeat
+    a
+        display block
+        width 100%
+        height 100%
+nav
+    float right
+    a
+        display block
+        text-decoration none
+    ul
+        list-style none
+        float right
+        li
+            float left
+        &#shortcuts
+            margin-top 50px
+            margin-right 2px
+            li
+                padding-left 12px
+            a
+                height 18px
+                text-indent -9999px
+                opacity 0.5
+                transition(opacity 150ms linear)
+                &:hover
+                    opacity 1
+                icon-background(name)
+                    background url(../images/name.png) center center no-repeat
+                &.mail
+                    width 19px
+                    margin-right 3px
+                    icon-background(mail)
+                &.rss
+                    width 13px
+                    icon-background(rss)
+                &.bookmark
+                    width 9px
+                    icon-background(bookmark)
+        &#menu
+            clear both
+            margin-top 5px
+            a
+                padding 4px 0
+                font 14px 'Droid Sans', sans-serif 
+                color #aaa
+                text-transform lowercase
+                text-shadow 0 1px 0 rgba(255, 255, 255, 1)
+                transition(color 150ms linear)
+                &:hover
+                    color #666
+                &.active
+                    color #363636
+            li
+                padding-left 24px
+#content
+    clear both
+    margin-top 20px
+    padding-top 30px
+    border-top 1px dotted #aaa
+footer
+    margin-top 20px
+    padding-top 20px
+    padding-bottom 20px
+    border-top 1px dotted #ccc
+    font 12px/1.2 'Droid Sans', sans-serif
+    color #bbb
+    a
+        color #aaa
+        text-decoration none
+        text-transform lowercase
+        &:hover
+            text-decoration underline
+    .right
+        float right
+        text-align right
+
+/* useful stuff */
+.clearfix
+    &:before, &:after
+        content ""
+        display table
+    &:after
+        clear both
+
+/* pages */
+#content.home
+    font-size 18px
+    line-height 26px
+    p
+        width (width / 5 * 3)
+/* pages */
+#intro
+    float left
+    width (width / 5 * 3 - 60)
+    //font-family Georgia
+    font-size 18px
+    line-height 26px
+    h2
+        color #363636
+        //font-family Georgia
+        font-size 18px
+        font-style normal
+        margin-bottom 40px
+        span
+            display block
+            padding-top 12px
+    p
+        color #999
+        font-size 18px
+#activity
+    float right
+    width (width / 5 * 2 + 10)
+    ul
+        font-size 12px
+        span
+            display block
+            text-align right
+            border-top 1px dotted #ccc
+    table
+        width 100%
+        font-size 12px
+        td
+            padding 3px 6px
+        tr
+            border-bottom 1px dotted #ccc
+        .date
+            background #fff
+            color #bbb
+            font-size 12px
+            padding 0 2px
+        .category
+            font-size 12px
+            color #a4bcc2
+#content.contact
+    ul
+        float right
+        padding 0 10px 30px 60px
+        list-style none
+        a
+            line-height 24px
+            vertical-align middle
+        li
+            margin 0
+            padding 4px 32px
+            padding-right 4px
+            line-height 24px
+            vertical-align vertical
+            border-bottom 1px dotted #ddd
+            for icon, i in mail jabber github irc twitter
+                &:nth-child({i + 1})
+                    background url(../images/icon.png) left center no-repeat
+            &:last-child
+                border 0
+    blockquote
+        padding 2px 0 2px 10px
+        margin-left 30px
+        margin-bottom 20px
+        border-left 1px dotted #ddd
+        font-style italic
+        p
+            padding 0
+
+/* basic tags */
+a
+    color #81a8b8
+    text-decoration underline
+h2, h3, h4, h5, h6
+    font 'Droid Sans', sans-serif
+    color #363636
+h2
+    text-shadow 0 1px 2px #666
+    font-size 32px
+    margin 10px 0 25px 0
+    text-shadow 1px 1px 0 rgba(255, 255, 255, 1)
+    //text-shadow 1px 1px 0 #fff, 2px 2px 0 #333
+h3
+    font-size 1.5em
+    margin 0.7em 0
+p
+    padding-bottom 25px
