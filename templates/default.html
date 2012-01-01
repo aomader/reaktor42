@@ -2,25 +2,27 @@
 <html>
     <head>
         <meta charset=utf-8>
-        <title>reaktor42 - $title$</title>
+        <title>$title$ | reaktor42</title>
+        <link rel="shortcut icon" href=/favicon.ico>
         <link rel=stylesheet href=/css/reset.css media=screen,projection>
         <link rel=stylesheet href=/css/screen.css media=screen,projection>
-        <link rel=alternate href=/feed.atom title="reaktor42 - a personal platform" type=application/atom+xml>
-        <link rel=alternate href=/feed.rss title="reaktor42 - a personal platform" type=application/rss+xml>
-        <link rel="shortcut icon" href=/favicon.ico>
+        <link rel=stylesheet href=/css/highlighting.css media=screen,projection>
+        <script language=javascript type=text/javascript src=/js/jquery_1.7.1.js></script>
         <script language=javascript type=text/javascript src=/js/site.js></script>
+        <link rel=alternate href=/atom.xml title="reaktor42 - a personal platform" type=application/atom+xml>
+        <link rel=alternate href=/rss.xml title="reaktor42 - a personal platform" type=application/rss+xml>
     </head>
     <body>
         <header class=clearfix>
             <h1><a href=/ title="reaktor42 - a personal platform">reaktor42 - a personal platform</a></h1>
             <nav>
                 <ul id=shortcuts>
-                    <li><a href=asd class=mail title=Mail>Mail</a>
-                    <li><a href=asd class=rss title=Feed>Feed</a>
-                    <li><a href=asd class=bookmark title=Bookmark>Bookmark</a>
+                    <li><a href=mailto:b52@reaktor42.de class=mail title=Mail>Mail</a>
+                    <li><a href=/atom.xml class=rss title=Feed>Feed</a>
+                    <li><a href="javascript:window.bookmark();return false;" class=bookmark title=Bookmark>Bookmark</a>
                 </ul>
                 <ul id=menu>
-                    <li><a href=/ class=active>Home</a></li>
+                    <li><a href=/>Home</a></li>
                     <li><a href=/about.html>About</a></li>
                     <li><a href=/blog.html>Blog</a></li>
                     <li><a href=/projects.html>Projects</a></li>

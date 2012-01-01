@@ -37,6 +37,9 @@ transition(arg)
     font-weight bold
     font-style italic
     src url(fonts/droidserif_bolditalic.ttf)
+@font-face
+    font-family 'Droid Sans Mono'
+    src url(fonts/droidsansmono.ttf)
 
 /* general layout */
 html
@@ -44,10 +47,11 @@ html
     height 100%
     background #fff url(../images/bg.png) repeat-x
     color #363636
+    font-size 100.01%
 body
     width width
     margin 0 auto
-    font 14px/1.5  'Droid Serif','Brawler', helvetica, arial, sans-serif
+    font 15px/1.5em  'Droid Serif','Brawler', helvetica, arial, sans-serif
     letter-spacing 0.1
 h1
     float left
@@ -68,6 +72,9 @@ nav
     ul
         list-style none
         float right
+        margin 0
+        padding 0
+        line-height 1
         li
             float left
         &#shortcuts
@@ -139,56 +146,24 @@ footer
         display table
     &:after
         clear both
+table.sourceCode
+    width 100%
+    border 1px dotted #999 !important
+    font-family 'Droid Sans Mono', monospace
+    background #e7e7e7
 
 /* pages */
 #content.home
     font-size 18px
     line-height 26px
-    p
-        width (width / 5 * 3)
-/* pages */
-#intro
-    float left
-    width (width / 5 * 3 - 60)
-    //font-family Georgia
-    font-size 18px
-    line-height 26px
     h2
-        color #363636
-        //font-family Georgia
-        font-size 18px
-        font-style normal
-        margin-bottom 40px
-        span
-            display block
-            padding-top 12px
-    p
+        margin 0.4em 0 0.3em 0
+    img
+        float right
+        padding 0 1.5em
+        margin-top -1.2em
+    p:last-child
         color #999
-        font-size 18px
-#activity
-    float right
-    width (width / 5 * 2 + 10)
-    ul
-        font-size 12px
-        span
-            display block
-            text-align right
-            border-top 1px dotted #ccc
-    table
-        width 100%
-        font-size 12px
-        td
-            padding 3px 6px
-        tr
-            border-bottom 1px dotted #ccc
-        .date
-            background #fff
-            color #bbb
-            font-size 12px
-            padding 0 2px
-        .category
-            font-size 12px
-            color #a4bcc2
 #content.contact
     ul
         float right
@@ -216,23 +191,51 @@ footer
         border-left 1px dotted #ddd
         font-style italic
         p
-            padding 0
+            margin 0
 
 /* basic tags */
 a
     color #81a8b8
     text-decoration underline
-h2, h3, h4, h5, h6
-    font 'Droid Sans', sans-serif
+h1, h2, h3, h4, h5, h6
+    font normal 'Droid Sans', sans-serif
     color #363636
 h2
-    text-shadow 0 1px 2px #666
-    font-size 32px
-    margin 10px 0 25px 0
-    text-shadow 1px 1px 0 rgba(255, 255, 255, 1)
+    font-size 2.5em
+    line-height .8em
+    margin-bottom .7em
+    //text-shadow 0 1px 2px #666
+    //text-shadow 1px 1px 0 rgba(255, 255, 255, 1)
     //text-shadow 1px 1px 0 #fff, 2px 2px 0 #333
 h3
+    font-size 2em
+    line-height .75em
+    margin-bottom 0.75em
+h4
     font-size 1.5em
-    margin 0.7em 0
-p
-    padding-bottom 25px
+    line-height 1
+    margin-bottom 1em
+h5
+    font-size 1.2em
+    line-height 1.25
+    margin-bottom 1.25em
+h6
+    font-size 1em
+    font-weight bold
+    margin-bottom 1.5em
+p, ol, ul, dl, blockquote, pre, code
+    margin-bottom 1.5em
+blockquote
+    margin 1.5em
+    font-style italic
+    color #565656
+ul, ol
+    padding-left 1.5em
+ul
+    list-style-type disc
+ol
+    list-style-type decimal
+dl dt
+    font-weight bold
+dd
+    margin-left 1.5em

@@ -6,6 +6,7 @@ module Main
 import Control.Arrow ((>>>), (>>^), arr)
 import Data.Monoid (mempty)
 import System.FilePath (joinPath, splitPath)
+import Text.Pandoc (WriterOptions (..))
 
 import Hakyll
 
@@ -42,9 +43,8 @@ main = hakyllWith config $ do
     match "pages/**" $ do
         route $ customRoute (joinPath . tail . splitPath . toFilePath)
             `composeRoutes` setExtension "html"
-        compile $ pageCompiler
+        compile $ pageCompiler'
             >>> applyTemplateCompiler "templates/default.html"
-            >>> relativizeUrlsCompiler
 
     match "blog/*" $ do
         route $ setExtension "html"
@@ -57,7 +57,7 @@ main = hakyllWith config $ do
     match "blog.html" $ route idRoute
     create "blog.html" $ constA mempty
         >>> arr (setField "title" "Blog")
-        >>> setFieldPageList recentFirst
+        >>> setFieldPageList (take 5 . recentFirst)
                 "templates/blog-item.html" "posts" "blog/*"
         >>> applyTemplateCompiler "templates/blog.html"
         >>> applyTemplateCompiler "templates/default.html"
@@ -70,21 +70,11 @@ main = hakyllWith config $ do
         >>> arr tagsMap
         >>> arr (map (\(t, p) -> (fromCapture "tags/*" t, makeTagList t p)))
 
-    match "feed.rss" $ route idRoute
-    create "feed.rss" $ requireAll_ "blog/*"
-        >>> renderRss feedConfiguration
+    match "rss.xml" $ route idRoute
+    create "rss.xml" $ requireAll_ "blog/*" >>> renderRss feedConfiguration
 
-    match "feed.atom" $ route idRoute
-    create "feed.atom" $ requireAll_ "blog/*"
-        >>> renderAtom feedConfiguration
-
-
-    match "index.html" $ route idRoute
-    create "index.html" $ constA mempty
-        >>> arr (setField "title" "Home")
-        >>> applyTemplateCompiler "templates/index.html"
-        >>> applyTemplateCompiler "templates/default.html"
-        >>> relativizeUrlsCompiler
+    match "atom.xml" $ route idRoute
+    create "atom.xml" $ requireAll_ "blog/*" >>> renderAtom feedConfiguration
 
   where
     stylusCompiler :: Compiler Resource String
@@ -96,6 +86,12 @@ main = hakyllWith config $ do
     coffeeCompiler :: Compiler Resource String
     coffeeCompiler = getResourceString >>> unixFilter "coffee" ["-s", "-c"]
                                        >>> unixFilter "yuicompressor" ["--type", "js"]
+
+    pageCompiler' :: Compiler Resource (Page String)
+    pageCompiler' = pageCompilerWith defaultHakyllParserState
+        defaultHakyllWriterOptions { writerHtml5 = True
+                                   , writerSectionDivs = True
+                                   }
 
     makeTagList :: String -> [Page String] -> Compiler () (Page String)
     makeTagList tag posts = constA posts
