@@ -12,35 +12,35 @@ a specific need, but sometimes just for fun and educational purposes. The used
 languages vary from C, Python over Haskell to the common web languages HTML,
 CSS and JavaScript.
 
-
 ### Software
 
+* [lala] - a slick yet powerful MPD web client
+* [snps] - a C library to solve 15-puzzle games
+* [thetime] - a date and time drawing X11 application
+* [qinfo] - a fast and lean GTK+ based ASCII art viewer
+* [mysmartctl] - controller and terminal for the mySmartUSB device
+* [hakismet] - a Haskell library to use the anti-spam service Akismet
+* [python-mpd-twisted] - an MPD client library written in pure Python utilizing Twisted
 
-#### thetime <span class=version>(v0.2)</span>
+[lala]: https://github.com/b52/lala
+[snps]: https://github.com/b52/snps
+[thetime]: https://github.com/b52/thetime
+[qinfo]: https://github.com/b52/qinfo
+[mysmartctl]: https://github.com/b52/mysmartctl
+[hakismet]: https://github.com/b52/hakismet
+[python-mpd-twisted]: https://github.com/b52/python-mpd-twisted
 
-A tiny X app to draw the current date and time, described by a [strftime(3)]
-valid string, directly onto the root window. A lightweight alternative to
-[conky] if you want a dead simple clock.
+### Hardware
 
-[strftime(3)]: http://linux.die.net/man/3/strftime
-[conky]: http://conky.sourceforge.net/
+Expect something huge ... ;)
 
+### Hosting
 
-#### qinfo <span class=version>(v1.0)</span>
+I still maintain a few sites which I also programmed. Most of them are related
+to the event management company of my little sister Lisa.
 
-A fast ASCII art viewer based on the GTK+ toolkit. Inspired by the
-[DAMN NFO Viewer] I created a simple but effective text viewer that
-properly renders [ASCII art] that is in the CP437 codepage.
+* [www.rockzone-kiel.de](http://www.rockzone-kiel.de)
+* [www.nordevents-kiel.de](http://www.nordevents-kiel.de)
+* [www.excessallareas.de](http://www.excessallareas.de)
+* [www.querbeat2.de](http://www.querbeat2.de)
 
-[DAMN NFO Viewer]: http://damn-nfo-viewer.softpedia.com/
-[ASCII art]: http://en.wikipedia.org/wiki/Ascii_art
-
-
-#### mysmartctl <span class=version>(v0.0)</span>
-
-More to come
-
-
-### Random Bits
-
-- pew pew
