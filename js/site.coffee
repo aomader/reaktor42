@@ -4,6 +4,7 @@ $(document).ready ->
     path_component = window.location.pathname.match(path_pattern)[1]
     $('#menu a').each ->
         $(this).addClass('active') if this.href.match(href_pattern)[1] is path_component
+    $('#year').text (new Date()).getFullYear()
 
 window.bookmark = ->
     url = 'http://www.reaktor42.de'

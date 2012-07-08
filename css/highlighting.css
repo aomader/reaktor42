@@ -1,4 +1,6 @@
 /* Loosely based on pygment's tango colors */
+
+/*
 table.sourceCode, tr.sourceCode, td.sourceCode, table.sourceCode pre
    { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; background-color: #f8f8f8 }
 td.nums { text-align: right; padding-right: 5px; padding-left: 5px; background-color: #f0f0f0; }
@@ -6,6 +8,7 @@ td.sourceCode { padding-left: 5px; }
 code.sourceCode { background-color: #f8f8f8; }
 pre.sourceCode { background-color: #f8f8f8; line-height: 125% }
 td.nums pre { background-color: #f0f0f0; line-height: 125% }
+*/
 code.sourceCode span.kw { color: #204a87; font-weight: bold } /* Keyword */
 code.sourceCode span.dt { color: #204a87 } /* Keyword.Type */
 code.sourceCode span.dv { color: #0000cf } /* Literal.Number.Integer */

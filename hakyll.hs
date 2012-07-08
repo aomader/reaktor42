@@ -6,7 +6,7 @@ module Main
 import Control.Arrow ((>>>), (>>^), arr)
 import Data.Monoid (mempty)
 import System.FilePath (joinPath, splitPath)
-import Text.Pandoc (WriterOptions (..))
+import Text.Pandoc (WriterOptions (..), HTMLMathMethod(MathJax))
 
 import Hakyll
 
@@ -48,7 +48,7 @@ main = hakyllWith config $ do
 
     match "blog/*" $ do
         route $ setExtension "html"
-        compile $ pageCompiler
+        compile $ pageCompiler'
             >>> arr (renderDateField "date" "%B %e, %Y" "Date unknown")
             >>> renderTagsField "prettytags" (fromCapture "tags/*")
             >>> applyTemplateCompiler "templates/blog-post.html"
@@ -91,6 +91,7 @@ main = hakyllWith config $ do
     pageCompiler' = pageCompilerWith defaultHakyllParserState
         defaultHakyllWriterOptions { writerHtml5 = True
                                    , writerSectionDivs = True
+                                   , writerHTMLMathMethod = MathJax ""
                                    }
 
     makeTagList :: String -> [Page String] -> Compiler () (Page String)

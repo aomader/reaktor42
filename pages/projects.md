@@ -15,7 +15,6 @@ CSS and JavaScript.
 
 ### Software
 
-
 #### thetime <span class=version>(v0.2)</span>
 
 A tiny X app to draw the current date and time, described by a [strftime(3)]

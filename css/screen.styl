@@ -6,6 +6,10 @@ border-radius(n)
     -webkit-border-radius n
     -moz-border-radius n
     border-radius n
+box-sizing(arg)
+    -moz-box-sizing arg
+    -webkit-box-sizing arg
+    box-sizing arg
 transition(arg)
     -webkit-transition arg
     -moz-transition arg
@@ -42,6 +46,8 @@ transition(arg)
     src url(fonts/droidsansmono.ttf)
 
 /* general layout */
+*
+    box-sizing(border-box)
 html
     width 100%
     height 100%
@@ -125,7 +131,7 @@ nav
 footer
     margin-top 20px
     padding-top 20px
-    padding-bottom 20px
+    padding-bottom 40px
     border-top 1px dotted #ccc
     font 12px/1.2 'Droid Sans', sans-serif
     color #bbb
@@ -146,11 +152,14 @@ footer
         display table
     &:after
         clear both
-table.sourceCode
+pre.sourceCode, table.sourceCode
     width 100%
-    border 1px dotted #999 !important
+    line-height 125%
+    border 1px solid #d9dfe2
+    padding 8px 12px
     font-family 'Droid Sans Mono', monospace
-    background #e7e7e7
+    background #f4f6f7
+    margin-bottom 1.5em
 
 /* pages */
 #content.home
@@ -192,6 +201,28 @@ table.sourceCode
         font-style italic
         p
             margin 0
+#content.projects
+    #software
+        > section
+            h4
+                margin-bottom 0.5em
+                padding-bottom 0.5em
+                border-bottom 1px dotted #aaa
+
+/*
+    #software
+        > section
+            width 50%
+            float left
+            &:nth-child(2n)
+                padding-right 30px
+            &:nth-child(2n - 1)
+                padding-left 30px
+            h4
+                margin-bottom 0.5em
+                padding-bottom 0.5em
+                border-bottom 1px dotted #aaa
+*/
 
 /* basic tags */
 a
@@ -227,6 +258,9 @@ p, ol, ul, dl, blockquote, pre, code
     margin-bottom 1.5em
 blockquote
     margin 1.5em
+    margin-left 1em
+    padding-left .5em
+    border-left 1px dotted #ccc
     font-style italic
     color #565656
 ul, ol
