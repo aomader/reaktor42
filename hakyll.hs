@@ -106,13 +106,13 @@ config :: HakyllConfiguration
 config = defaultHakyllConfiguration
     { destinationDirectory = "_build"
     , storeDirectory       = "_cache"
-    , deployCommand        = "rsync -ave ssh _build/* b52@reaktor42.de:/var/www/reaktor42.de"
+    , deployCommand        = "rsync -ave ssh _build/* b52@reaktor42.de:/var/www/reaktor42.de/www"
     }
 
 feedConfiguration :: FeedConfiguration
 feedConfiguration = FeedConfiguration
     { feedTitle       = "reaktor42"
-    , feedDescription = ""
+    , feedDescription = "A personal platform"
     , feedAuthorName  = "Oliver Mader"
     , feedRoot        = "http://reaktor42.de"
     }
