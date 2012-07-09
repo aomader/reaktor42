@@ -112,7 +112,7 @@ config = defaultHakyllConfiguration
 feedConfiguration :: FeedConfiguration
 feedConfiguration = FeedConfiguration
     { feedTitle       = "reaktor42"
-    , feedDescription = "A personal platform"
+    , feedDescription = "a personal platform"
     , feedAuthorName  = "Oliver Mader"
     , feedRoot        = "http://reaktor42.de"
     }
