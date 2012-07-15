@@ -18,8 +18,8 @@ main = hakyllWith config $ do
     match "css/*" $ do
         route $ setExtension "css"
         compile $ byExtension (error "Not a CSS/Stylus file")
-            [ (".css", compressCssCompiler)
-            , (".styl", stylusCompiler)
+            [ (".css", compressCssCompiler')
+            , (".stylus", stylusCompiler)
             ]
 
     match "js/*" $ do
@@ -82,6 +82,9 @@ main = hakyllWith config $ do
 
     compressJsCompiler :: Compiler Resource String
     compressJsCompiler = getResourceString >>> unixFilter "yui-compressor" ["--type", "js"]
+
+    compressCssCompiler' :: Compiler Resource String
+    compressCssCompiler' = getResourceString >>> unixFilter "yui-compressor" ["--type", "css"]
 
     coffeeCompiler :: Compiler Resource String
     coffeeCompiler = getResourceString >>> unixFilter "coffee" ["-s", "-c"]
