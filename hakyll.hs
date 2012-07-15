@@ -44,23 +44,23 @@ main = hakyllWith config $ do
         route $ customRoute (joinPath . tail . splitPath . toFilePath)
             `composeRoutes` setExtension "html"
         compile $ pageCompiler'
-            >>> applyTemplateCompiler "templates/default.html"
+            >>> applyTemplateCompiler "templates/default.hamlet"
 
     match "blog/*" $ do
         route $ setExtension "html"
         compile $ pageCompiler'
             >>> arr (renderDateField "date" "%B %e, %Y" "Date unknown")
             >>> renderTagsField "prettytags" (fromCapture "tags/*")
-            >>> applyTemplateCompiler "templates/blog-post.html"
-            >>> applyTemplateCompiler "templates/default.html"
+            >>> applyTemplateCompiler "templates/blog-post.hamlet"
+            >>> applyTemplateCompiler "templates/default.hamlet"
 
     match "blog.html" $ route idRoute
     create "blog.html" $ constA mempty
         >>> arr (setField "title" "Blog")
         >>> setFieldPageList (take 5 . recentFirst)
-                "templates/blog-item.html" "posts" "blog/*"
-        >>> applyTemplateCompiler "templates/blog.html"
-        >>> applyTemplateCompiler "templates/default.html"
+                "templates/blog-item.hamlet" "posts" "blog/*"
+        >>> applyTemplateCompiler "templates/blog.hamlet"
+        >>> applyTemplateCompiler "templates/default.hamlet"
 
     create "tags" $
         requireAll "blog/*" (\_ ps -> readTags ps :: Tags String)
@@ -81,11 +81,11 @@ main = hakyllWith config $ do
     stylusCompiler = getResourceString >>> unixFilter "stylus" ["-c"]
 
     compressJsCompiler :: Compiler Resource String
-    compressJsCompiler = getResourceString >>> unixFilter "yuicompressor" ["--type", "js"]
+    compressJsCompiler = getResourceString >>> unixFilter "yui-compressor" ["--type", "js"]
 
     coffeeCompiler :: Compiler Resource String
     coffeeCompiler = getResourceString >>> unixFilter "coffee" ["-s", "-c"]
-                                       >>> unixFilter "yuicompressor" ["--type", "js"]
+                                       >>> unixFilter "yui-compressor" ["--type", "js"]
 
     pageCompiler' :: Compiler Resource (Page String)
     pageCompiler' = pageCompilerWith defaultHakyllParserState
@@ -96,11 +96,11 @@ main = hakyllWith config $ do
 
     makeTagList :: String -> [Page String] -> Compiler () (Page String)
     makeTagList tag posts = constA posts
-        >>> pageListCompiler recentFirst "templates/blog-item.html"
+        >>> pageListCompiler recentFirst "templates/blog-item.hamlet"
         >>> arr (copyBodyToField "posts" . fromBody)
         >>> arr (setField "title" ("Posts tagged " ++ tag))
-        >>> applyTemplateCompiler "templates/blog.html"
-        >>> applyTemplateCompiler "templates/default.html"
+        >>> applyTemplateCompiler "templates/blog.hamlet"
+        >>> applyTemplateCompiler "templates/default.hamlet"
 
 config :: HakyllConfiguration
 config = defaultHakyllConfiguration

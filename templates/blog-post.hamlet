@@ -1,0 +1,15 @@
+<h2>#{title}
+
+#{body}
+
+<div id=dsq-thread-container>
+    <div id="disqus_thread">
+
+<script type="text/javascript">
+    var disqus_url = 'http://reaktor42.de' + '#{url}';
+    var disqus_title = '#{title}';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://reaktor42.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
