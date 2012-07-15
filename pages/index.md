@@ -5,7 +5,7 @@ container: home
 description: The personal platform of Oliver Mader
 ---
 
-## Hej I'm Oliver,
+## Hej, I'm Oliver,
 
 ![A caffeine driven robot](/images/robot.png)\
 
