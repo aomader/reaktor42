@@ -9,6 +9,9 @@
         <link rel=stylesheet href=/css/highlighting.css media=screen,projection>
         <link rel=alternate href=/atom.xml title="reaktor42 - a personal platform" type=application/atom+xml>
         <link rel=alternate href=/rss.xml title="reaktor42 - a personal platform" type=application/rss+xml>
+        <link rel=openid.server href=https://id.reaktor42.de/>
+        <link rel=openid2.provider href=https://id.reaktor42.de/>
+        <meta http-equiv=X-XRDS-Location content=https://id.reaktor42.de/index.php?q=xrds/b52>
 
     <body>
         <header class=clearfix>
