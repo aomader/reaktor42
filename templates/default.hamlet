@@ -33,14 +33,11 @@
 
         <footer>
             <div class=right>
-                © Copyright 2008-<span id=year></span> Oliver Mader<br>
+                © Copyright 2008-2013 Oliver Mader<br>
                 Site proudly generated with <a href=http://jaspervdj.be/hakyll>hakyll</a>.
-            <a href=/legal_notice.html>Legal notice
-            -
-            <a href=https://github.com/b52/reaktor42>Source code
+            <a href=/legal_notice.html>Legal notice</a> - <a href=https://github.com/b52/reaktor42>Source code</a>
 
-        <script language=javascript type=text/javascript src=/js/jquery_1.7.1.js>
-        <script language=javascript type=text/javascript src=/js/site.js>
-        <script language=javascript type=text/javascript src="/files/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        <script language=javascript type=text/javascript src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        <script async language=javascript type=text/javascript src=/js/libs/jquery-1.10.2.min.js>
+        <script async language=javascript type=text/javascript src=/js/libs/mathjax/MathJax.js?config=TeX-AMS-MML-HTMLorMML>
+        <script async language=javascript type=text/javascript src=/js/site.js>
 
