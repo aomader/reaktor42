@@ -14,6 +14,7 @@ CSS and JavaScript.
 
 ### Software
 
+* [dotfiles] - my archlinux, xmonad, shell-based setup
 * [lala] - a slick yet powerful MPD web client
 * [snps] - a C library to solve 15-puzzle games
 * [thetime] - a date and time drawing X11 application
@@ -22,6 +23,7 @@ CSS and JavaScript.
 * [hakismet] - a Haskell library to use the anti-spam service Akismet
 * [python-mpd-twisted] - an MPD client library written in pure Python utilizing Twisted
 
+[dotfiles]: https://github.com/b52/dotfiles
 [lala]: https://github.com/b52/lala
 [snps]: https://github.com/b52/snps
 [thetime]: https://github.com/b52/thetime
@@ -43,4 +45,5 @@ to the event management company of my little sister Lisa.
 * [www.nordevents-kiel.de](http://www.nordevents-kiel.de)
 * [www.excessallareas.de](http://www.excessallareas.de)
 * [www.querbeat2.de](http://www.querbeat2.de)
+* [www.nahtige-zeiten.de](http://www.nahtige-zeiten.de)
 
